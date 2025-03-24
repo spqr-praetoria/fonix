@@ -81,9 +81,12 @@ test:
 production:
   primary: &primary_production
     <<: *default
+    url: <%= ENV["DATABASE_URL"] %>
     database: fonix_production
-    username: fonix
-    password: <%= ENV["FONIX_DATABASE_PASSWORD"] %>
+    username: <%= ENV["PGUSER"] || 'fonix' %>
+    password: <%= ENV["PGPASSWORD"] || ENV["FONIX_DATABASE_PASSWORD"] %>
+    host: <%= ENV["PGHOST"] %>
+    port: <%= ENV["PGPORT"] || 5432 %>
   cache:
     <<: *primary_production
     database: fonix_production_cache
