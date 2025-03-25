@@ -46,3 +46,8 @@ node_modules
 *.local
 
 /coverage
+.cursor/
+
+/config/credentials/development.key
+
+/config/credentials/test.key

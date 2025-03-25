@@ -1,3 +1,22 @@
-example_id               | status | run_time        |
------------------------- | ------ | --------------- |
-./spec/test_spec.rb[1:1] | passed | 0.00105 seconds |
+example_id                                                                   | status | run_time        |
+---------------------------------------------------------------------------- | ------ | --------------- |
+./spec/models/user_spec.rb[1:1:1]                                            | passed | 0.0182 seconds  |
+./spec/models/user_spec.rb[1:1:2]                                            | passed | 0.03743 seconds |
+./spec/models/user_spec.rb[1:1:3]                                            | passed | 0.0333 seconds  |
+./spec/models/user_spec.rb[1:1:4]                                            | passed | 0.01847 seconds |
+./spec/models/user_spec.rb[1:1:5]                                            | passed | 0.02114 seconds |
+./spec/models/user_spec.rb[1:2:1]                                            | passed | 0.00641 seconds |
+./spec/models/user_spec.rb[1:3:1]                                            | passed | 0.00786 seconds |
+./spec/system/authentication_workflows/database_authenticatable_spec.rb[1:1] | passed | 0.49919 seconds |
+./spec/system/authentication_workflows/database_authenticatable_spec.rb[1:2] | passed | 0.52988 seconds |
+./spec/system/authentication_workflows/database_authenticatable_spec.rb[1:3] | passed | 0.48544 seconds |
+./spec/system/authentication_workflows/database_authenticatable_spec.rb[1:4] | passed | 0.49458 seconds |
+./spec/system/authentication_workflows/database_authenticatable_spec.rb[1:5] | passed | 3.17 seconds    |
+./spec/system/authentication_workflows/registerable_spec.rb[1:1]             | failed | 3.23 seconds    |
+./spec/system/authentication_workflows/registerable_spec.rb[1:2]             | failed | 2.67 seconds    |
+./spec/system/authentication_workflows/registerable_spec.rb[1:3]             | failed | 2.69 seconds    |
+./spec/system/authentication_workflows/registerable_spec.rb[1:4]             | passed | 0.64841 seconds |
+./spec/system/authentication_workflows/registerable_spec.rb[1:5]             | passed | 0.65537 seconds |
+./spec/system/authentication_workflows/registerable_spec.rb[1:6]             | passed | 0.70944 seconds |
+./spec/system/authentication_workflows/registerable_spec.rb[1:7]             | passed | 3.22 seconds    |
+./spec/test_spec.rb[1:1]                                                     | passed | 0.03499 seconds |
