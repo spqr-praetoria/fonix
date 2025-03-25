@@ -1,7 +1,4 @@
-require "solid_queue_monitor"
-
 Rails.application.routes.draw do
-  mount SolidQueueMonitor::Engine => "/solid_queue"
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
