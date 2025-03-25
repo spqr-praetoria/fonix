@@ -17,6 +17,8 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.13",
-    "daisyui": "^5.0.9"
+    "@stimulus-components/password-visibility": "^3.0.0",
+    "daisyui": "^5.0.9",
+    "tailwindcss-stimulus-components": "^6.1.3"
   }
 }
