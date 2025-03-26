@@ -1,0 +1,25 @@
+<% if message.user_id == current_user.id %>
+  <div class="card card-side border border-base-300">
+    <div class="card-body">
+      <h2 class="card-title">
+        <span class="avatar flex size-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 text-white">
+          <%= message.user.email.first.upcase %>
+        </span>
+        <%= message.user.username || message.user.email %>
+      </h2>
+      <p><%= message.content %></p>
+    </div>
+  </div>
+<% else %>
+  <div class="card card-side bg-primary text-primary-content">
+    <div class="card-body flex flex-col items-end">
+      <h2 class="card-title flex justify-end">
+        <%= message.user.username || message.user.email %>
+        <span class="avatar flex size-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-200 text-[0.625rem] font-medium text-gray-900">
+          <%= message.user.email.first.upcase %>
+        </span>
+      </h2>
+      <p><%= message.content %></p>
+    </div>
+  </div>
+<% end %> 

@@ -1,6 +1,6 @@
 <div class="bg-base-100 p-4 fixed bottom-0 left-0 lg:left-72 right-0 border-t border-gray-300 border-t-1">
-  <form class="flex items-center pr-4">
-    <input type="text" placeholder="Type your message..." class="input input-bordered flex-grow mr-2">
-    <button type="submit" class="btn btn-primary">Send message</button>
-  </form>
+  <%= form_with model: Message.new, class: "flex items-center pr-4", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" } do |f| %>
+    <%= f.text_field :content, placeholder: "Type your message...", class: "input input-bordered flex-grow mr-2", required: true, autofocus: true %>
+    <%= f.submit "Send message", class: "btn btn-primary" %>
+  <% end %>
 </div>
