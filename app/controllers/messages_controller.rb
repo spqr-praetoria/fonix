@@ -1,11 +1,17 @@
 class MessagesController < ApplicationController
   def create
     @message = current_user.messages.build(message_params)
-    @message.channel_id = Channel.first.id # As specified, we only have 1 channel
+    @message.channel_id = Channel.first.id
 
     respond_to do |format|
       if @message.save
-        format.turbo_stream
+        Turbo::StreamsChannel.broadcast_append_to(
+          "messages_channel",
+          target: "messages",
+          partial: "messages/message",
+          locals: { message: @message }
+        )
+        format.turbo_stream { render turbo_stream: turbo_stream.append("messages", partial: "messages/message", locals: { message: @message }) }
         format.html { redirect_back(fallback_location: root_path) }
       else
         format.html { redirect_back(fallback_location: root_path, alert: 'Failed to send message.') }
