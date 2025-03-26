@@ -1,11 +1,11 @@
 <section class="border-b border-gray-200">
-  <div class="navbar container mx-auto bg-base-100 ">
+  <div class="navbar container mx-auto bg-base-100">
     <div class="navbar-start text-xl font-bold text-primary sm:pl-0 pl-4">
       Fonix
     </div>
     <div class="navbar-center">
     </div>
-    <div class="navbar-end sm:pl-0 pr-4">
+    <div class="navbar-end sm:pr-0 pr-4">
       <% if user_signed_in? %>
         <%= button_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo: false }, class: "btn btn-primary" %>
       <% else %>
