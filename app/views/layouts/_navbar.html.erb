@@ -6,15 +6,7 @@
     <div class="navbar-center">
     </div>
     <div class="navbar-end sm:pr-0 pr-4">
-      <% if user_signed_in? %>
-        <%= button_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo: false }, class: "btn btn-primary" %>
-      <% else %>
-        <% if current_page?(:sessions, :new) %>
-          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
-        <% else %>
-          <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary" %>
-        <% end %>
-      <% end %>
+      <%= render "shared/auth_buttons" %>
     </div>
   </div>
 </section>
