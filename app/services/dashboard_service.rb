@@ -1,0 +1,45 @@
+class DashboardService
+  def initialize(current_user)
+    @current_user = current_user
+  end
+
+  def fetch
+    {
+      channel: channel || NullChannel.new,
+      messages: messages&.order(created_at: :desc)&.limit(100),
+      messages_count: messages_count,
+      users: users&.order(last_sign_in_at: :asc),
+      users_count: users_count
+    }
+  end
+
+  private
+
+  attr_reader :current_user
+
+  def channel
+    @channel ||= Channel.first
+  end
+
+  def messages
+    @messages ||= channel&.messages
+  end
+
+  def messages_count
+    @messages_count ||= messages&.count
+  end
+
+  def users
+    @users ||= User.excluding(current_user)
+  end
+
+  def users_count
+    @users_count ||= users&.count
+  end
+end
+
+class NullChannel
+  def name
+    "No Channel"
+  end
+end 
