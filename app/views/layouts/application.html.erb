@@ -23,21 +23,13 @@
     <%= vite_javascript_tag 'application' %>
   </head>
   <body class="h-full">
-    <%= render "layouts/notifications" %>
+    <%= render "shared/notifications" %>
 
     <div>
-      <%= render "layouts/sidebar" %>
+      <%= render "shared/sidebar" %>
 
       <div class="lg:pl-72">
-        <div class="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-xs sm:gap-x-6 sm:px-6 lg:px-8">
-          <span class="text-xl font-bold text-primary sm:pl-0 pl-2 lg:hidden">Fonix</span>
-          
-          <div class="flex-1"></div>
-          
-          <div class="flex sm:pr-0 pr-2">
-            <%= render "shared/auth_buttons" %>
-          </div>
-        </div>
+        <%= render "shared/dashboard_navbar" %>
 
         <main class="py-10">
           <div class="px-4 sm:px-6 lg:px-8">
@@ -45,6 +37,8 @@
           </div>
         </main>
       </div>
+
+      <%= render "shared/send_message_form" %>
     </div>
   </body>
 </html>

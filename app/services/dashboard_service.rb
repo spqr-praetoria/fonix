@@ -42,4 +42,4 @@ class NullChannel
   def name
     "No Channel"
   end
-end 
+end

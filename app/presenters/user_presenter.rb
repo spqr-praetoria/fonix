@@ -1,7 +1,7 @@
 class UserPresenter < SimpleDelegator
   def initials(limit: 2)
-    return 'XX' if username.blank?
-    
+    return "XX" if username.blank?
+
     username.split
            .reject(&:blank?)
            .first(limit)
@@ -9,6 +9,6 @@ class UserPresenter < SimpleDelegator
            .join
            .upcase
   rescue
-    'XX'
+    "XX"
   end
-end 
+end
