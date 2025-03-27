@@ -17,7 +17,9 @@ class DashboardService
   attr_reader :current_user
 
   def channel
-    @channel ||= Channel.first
+    # TODO: Remove this once we have a proper channel
+    # On production deploy, Channel for some unknown reason is not being created
+    @channel ||= Channel.first || Channel.create!(name: "General", description: "General discussions")
   end
 
   def messages
