@@ -54,6 +54,7 @@ RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompiling assets for production
 RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+RUN bundle exec rails db:prepare
 
 # Final stage for app image
 FROM base
