@@ -78,10 +78,17 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  url: <%= ENV["DATABASE_URL"] %>
-  database: fonix_production
-  username: <%= ENV["PGUSER"] || 'fonix' %>
-  password: <%= ENV["PGPASSWORD"] || ENV["FONIX_DATABASE_PASSWORD"] %>
-  host: <%= ENV["PGHOST"] %>
-  port: <%= ENV["PGPORT"] || 5432 %>
+  primary: &primary_production
+    <<: *default
+    url: <%= ENV["DATABASE_URL"] %>
+    database: fonix_production
+    username: <%= ENV["PGUSER"] || 'fonix' %>
+    password: <%= ENV["PGPASSWORD"] || ENV["FONIX_DATABASE_PASSWORD"] %>
+    host: <%= ENV["PGHOST"] %>
+    port: <%= ENV["PGPORT"] || 5432 %>
+  queue:
+    <<: *primary_production
+  cable:
+    <<: *primary_production
+  cache:
+    <<: *primary_production
