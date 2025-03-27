@@ -19,7 +19,7 @@ class DashboardService
   def channel
     # TODO: Remove this once we have a proper channel
     # On production deploy, Channel for some unknown reason is not being created
-    @channel ||= Channel.first || Channel.create!(name: "General", description: "General discussions")
+    @channel ||= Channel.first
   end
 
   def messages
