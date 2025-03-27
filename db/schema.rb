@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_27_091654) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_27_092935) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pgcrypto"
@@ -39,7 +39,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_27_091654) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "payload"
+    t.bigint "channel_hash", null: false
     t.index ["channel", "broadcasting"], name: "index_solid_cable_messages_on_channel_and_broadcasting"
+    t.index ["channel_hash"], name: "index_solid_cable_messages_on_channel_hash"
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
