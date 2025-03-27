@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_27_090230) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_27_091654) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pgcrypto"
@@ -38,6 +38,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_27_090230) do
     t.text "message", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "payload"
     t.index ["channel", "broadcasting"], name: "index_solid_cable_messages_on_channel_and_broadcasting"
   end
 
