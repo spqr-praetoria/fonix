@@ -18,7 +18,7 @@ RSpec.describe DateTimePresenter do
     end
 
     it 'uses London timezone' do
-      original_time = Time.zone.parse("2024-03-15 23:30:00 UTC")
+      original_time = Time.zone.parse("2025-03-15 23:30:00 UTC")
       london_presenter = described_class.new(original_time)
 
       formatted_time = london_presenter.uk_formatted
