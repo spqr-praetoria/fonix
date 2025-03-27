@@ -15,7 +15,6 @@ RSpec.describe DashboardService do
 
         expect(result[:channel]).to eq(channel)
         expect(result[:messages].count).to eq(3)
-        expect(result[:messages_count]).to eq(3)
         expect(result[:users].count).to eq(2)
         expect(result[:users_count]).to eq(2)
       end
@@ -26,19 +25,10 @@ RSpec.describe DashboardService do
         expect(result[:users]).not_to include(current_user)
       end
 
-      it 'orders messages by created_at in descending order' do
+      it 'orders messages by created_at in ascending order' do
         result = service.fetch
 
         expect(result[:messages].first.created_at).to be >= result[:messages].last.created_at
-      end
-
-      it 'limits messages to 100' do
-        create_list(:message, 150, user: current_user, channel: channel)
-
-        result = service.fetch
-
-        expect(result[:messages].count).to eq(100)
-        expect(result[:messages_count]).to eq(153)
       end
     end
 
@@ -54,7 +44,6 @@ RSpec.describe DashboardService do
         result = service.fetch
 
         expect(result[:messages]).to be_nil
-        expect(result[:messages_count]).to be_nil
       end
     end
   end

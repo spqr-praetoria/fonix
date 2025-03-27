@@ -5,4 +5,4 @@ class MessagesChannel < ApplicationCable::Channel
 
   def unsubscribed
   end
-end 
+end

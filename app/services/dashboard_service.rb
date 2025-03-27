@@ -6,8 +6,7 @@ class DashboardService
   def fetch
     {
       channel: channel || NullChannel.new,
-      messages: messages&.eager_load(:user)&.order(updated_at: :asc),
-      messages_count: messages_count,
+      messages: messages&.eager_load(:user)&.order(updated_at: :desc),
       users: users&.order(last_sign_in_at: :asc),
       users_count: users_count
     }
@@ -23,10 +22,6 @@ class DashboardService
 
   def messages
     @messages ||= channel&.messages
-  end
-
-  def messages_count
-    @messages_count ||= messages&.count
   end
 
   def users
