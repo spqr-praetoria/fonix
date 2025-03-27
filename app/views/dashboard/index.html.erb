@@ -3,11 +3,7 @@
 <div class="mt-auto">
   <div class="flex flex-col gap-4 mb-12">
     <div id="messages" class="flex flex-col gap-4 overflow-auto">
-      <% if @dashboard[:messages].present? %>
-        <%= render @dashboard[:messages] %>
-      <% else %>
-        <p>No messages to display.</p>
-      <% end %>
+      <%= render @dashboard[:messages] %>
     </div>
   </div>
 </div>
