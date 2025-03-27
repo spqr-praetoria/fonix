@@ -28,7 +28,7 @@ RailsAdmin.config do |config|
     authenticate_or_request_with_http_basic("Login required") do |username, password|
       # Replace these with your desired credentials
       # In production, you should use environment variables
-      username == "ben" && password == "whatever_world"
+      username == ENV["ADMIN_USERNAME"] && password == ENV["ADMIN_PASSWORD"]
     end
   end
 
