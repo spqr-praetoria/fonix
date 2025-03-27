@@ -1,8 +1,7 @@
-Channel.create!(
-  name: "General",
-  description: "Mobile payments & interactive services",
-  created_at: Time.now
-)
+Channel.find_or_create_by!(name: "General") do |channel|
+  channel.description = "General discussions"
+  channel.created_at = Time.now
+end
 
 # Cleanup
 # User.delete_all
