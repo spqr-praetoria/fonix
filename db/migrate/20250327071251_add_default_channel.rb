@@ -1,6 +1,6 @@
 class AddDefaultChannel < ActiveRecord::Migration[8.0]
   def up
-    Channel.create!(name: "General", description: "General discussions") if Channel.count.zero?
+    Channel.create!(name: "General", description: "General discussions")
   end
 
   def down

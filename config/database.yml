@@ -19,7 +19,6 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-
 development:
   <<: *default
   database: fonix_development
@@ -79,23 +78,10 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  primary: &primary_production
-    <<: *default
-    url: <%= ENV["DATABASE_URL"] %>
-    database: fonix_production
-    username: <%= ENV["PGUSER"] || 'fonix' %>
-    password: <%= ENV["PGPASSWORD"] || ENV["FONIX_DATABASE_PASSWORD"] %>
-    host: <%= ENV["PGHOST"] %>
-    port: <%= ENV["PGPORT"] || 5432 %>
-  cache:
-    <<: *primary_production
-    database: fonix_production_cache
-    migrations_paths: db/cache_migrate
-  queue:
-    <<: *primary_production
-    database: fonix_production_queue
-    migrations_paths: db/queue_migrate
-  cable:
-    <<: *primary_production
-    database: fonix_production_cable
-    migrations_paths: db/cable_migrate
+  <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
+  database: fonix_production
+  username: <%= ENV["PGUSER"] || 'fonix' %>
+  password: <%= ENV["PGPASSWORD"] || ENV["FONIX_DATABASE_PASSWORD"] %>
+  host: <%= ENV["PGHOST"] %>
+  port: <%= ENV["PGPORT"] || 5432 %>
