@@ -19,6 +19,8 @@
     "@hotwired/turbo-rails": "^8.0.13",
     "@stimulus-components/password-visibility": "^3.0.0",
     "daisyui": "^5.0.9",
+    "rails_admin": "3.3.0",
+    "sass": "^1.86.0",
     "tailwindcss-stimulus-components": "^6.1.3"
   }
 }
