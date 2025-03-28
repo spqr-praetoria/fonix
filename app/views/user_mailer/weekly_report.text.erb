@@ -4,7 +4,7 @@ Here's your weekly message activity report:
 
 Total messages this week: <%= @total_messages %>
 <% if @last_sent_at %>
-Your last message was sent: <%= @last_sent_at.strftime("%B %d, %Y at %I:%M %p") %>
+Your last message was sent: <%= DateTimePresenter.new(@last_sent_at).uk_formatted %>
 Messages since your last sent message: <%= @messages_since_last %>
 <% else %>
 You haven't sent any messages yet

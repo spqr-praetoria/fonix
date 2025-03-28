@@ -5,7 +5,7 @@
 <ul>
   <li>Total messages this week: <%= @total_messages %></li>
   <% if @last_sent_at %>
-    <li>Your last message was sent: <%= @last_sent_at.strftime("%B %d, %Y at %I:%M %p") %></li>
+    <li>Your last message was sent: <%= DateTimePresenter.new(@last_sent_at).uk_formatted %></li>
     <li>Messages since your last sent message: <%= @messages_since_last %></li>
   <% else %>
     <li>You haven't sent any messages yet</li>
