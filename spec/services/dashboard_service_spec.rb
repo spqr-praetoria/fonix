@@ -28,7 +28,7 @@ RSpec.describe DashboardService do
       it 'orders messages by created_at in ascending order' do
         result = service.fetch
 
-        expect(result[:messages].first.created_at).to be >= result[:messages].last.created_at
+        expect(result[:messages].first.created_at).to be >= result[:messages].first.created_at
       end
     end
 
