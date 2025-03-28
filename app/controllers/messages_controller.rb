@@ -35,7 +35,7 @@ class MessagesController < ApplicationController
   end
 
   def broadcast_message
-    Turbo::StreamsChannel.broadcast_prepend_to(
+    Turbo::StreamsChannel.broadcast_append_to(
       "messages_channel",
       target: "messages",
       partial: "messages/message",
