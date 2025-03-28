@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, only: [ :sessions, :registrations, :passwords, :confirmations ]
+  devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :messages, only: [ :create ]
