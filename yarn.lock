@@ -350,11 +350,6 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.37.0.tgz#a54d7304c3bd45573d8bcd1270de89771f8195fe"
   integrity sha512-LWbXUBwn/bcLx2sSsqy7pK5o+Nr+VCoRoAohfJ5C/aBio9nfJmGQqHAhU6pwxV/RmyTk5AqdySma7uwWGlmeuA==
 
-"@stimulus-components/password-visibility@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@stimulus-components/password-visibility/-/password-visibility-3.0.0.tgz#314c1bae571ba13b9a4da6014f3e5c5b776fe4cc"
-  integrity sha512-ikyuZ/4VX4YrCckVHDc4H6UkTr5UjtkxSH+UdlEIgP9v93W1Bbvnoao0hgQODm8cvNWigmpLpKoGUzgyjBlrdw==
-
 "@tailwindcss/node@4.0.17":
   version "4.0.17"
   resolved "https://registry.yarnpkg.com/@tailwindcss/node/-/node-4.0.17.tgz#c40a29035ceb40b7de38e155b5dacfda20dd47e9"
